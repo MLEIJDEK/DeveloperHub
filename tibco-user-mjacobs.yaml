@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  namespace: default
+  name: machiel.jacobs
+spec:
+  profile:
+    displayName: Machiel Jacobs
+    picture: https://picture.com/u/111298437?s=48&v=4
+  memberOf:
+    - emea-ats
