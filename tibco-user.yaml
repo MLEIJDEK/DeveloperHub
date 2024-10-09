@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  namespace: default
+  name: mleijdek
+spec:
+  profile:
+    displayName: Michel Leijdekker
+    picture: https://avatars.githubusercontent.com/u/111298437?s=48&v=4
+  memberOf:
+    - emea-ats

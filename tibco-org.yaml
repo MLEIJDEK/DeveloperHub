@@ -1,0 +1,38 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: Tibco-ATS
+  description: ATS Organisation in TIBCO
+spec:
+  type: organization
+  profile:
+    displayName: Account Technology Specialist
+    email: ats@cloud.com
+  children: [emea-ats, us-ats]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: emea-ats
+  description: EMEA ATS Organisation
+spec:
+  type: department
+  profile:
+    displayName: EMEA ATS
+    email: emea-ats@cloud.com
+  parent: Tibco-ATS
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: us-ats
+  description: US ATS Organisation
+spec:
+  type: department
+  profile:
+    displayName: US ATS
+    email: us-ats@cloud.com
+  parent: Tibco-ATS
+  children: []
+---
