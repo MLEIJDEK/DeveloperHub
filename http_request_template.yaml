@@ -26,7 +26,7 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/api/proxy/simple-example'
+        path: 'proxy/tibco/hub/api/proxy/simple-example'
         headers:
           content-type: 'application/json'
  
