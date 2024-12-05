@@ -26,7 +26,7 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/restcountries.com/v3.1/alpha/nl'
+        path: 'https://restcountries.com/v3.1/alpha/nl'
         headers:
           test: 'hello'
           foo: 'bar'
