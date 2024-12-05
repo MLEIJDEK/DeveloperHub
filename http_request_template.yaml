@@ -26,7 +26,7 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: 'https://restcountries.com/v3.1/alpha/nl'
+        path: '/api/proxy/simple-example'
         headers:
           content-type: 'application/json'
  
