@@ -29,7 +29,8 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/api/proxy/simple-example'
+    #    path: '/api/proxy/simple-example'
+        path: '/proxy/proxy/simple-example'
         headers:
           content-type: 'application/json'   
 
