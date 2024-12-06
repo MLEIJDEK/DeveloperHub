@@ -34,24 +34,34 @@ spec:
           content-type: 'application/json'
 
   # The import flow debug step, enable it for debugging  
-    - id: log-debug
+    - id: log-debug1
       name: Debug Logs
       action: debug:log
       input:
         message: "Fetched catelog entities for user and groups"
-        listWorkspace: true
-        API_Response: ${{ steps.call-devhub-api.output.body}}
+        API_Response: ${{ steps.call-devhub-api.output.body[1]}}
   
     - id: call-external-api
       name: call extrenal api
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/catalog/entities?filter=kind=user&filter=kind=group'
+        path: '/proxy/api/proxy/simple-example'
         headers:
-          content-type: 'application/json'    
-  
+          content-type: 'application/json'   
+
+    # The import flow debug step, enable it for debugging       
+    - id: log-debug2
+      name: Debug Logs
+      action: debug:log
+      input:
+        message: "Fetched catelog entities for user and groups"
+        API_Response: ${{ steps.call-external-api.output.body[0]}}
+
   output:
-      getResponse: '{{ steps.call-devhub-api.output.body }}'
-      getCode: '{{ steps.call-devhub-api.output.code }}'
-      getHeaders: '{{ steps.call-devhub-api.output.headers }}'
+      getResponse1: '{{ steps.call-devhub-api.output.body }}'
+      getResponse2: '{{ steps.call-external-api.output.body }}'
+      getCode1: '{{ steps.call-devhub-api.output.code }}'
+      getCode2: '{{ steps.call-external-api.output.code }}'
+      getHeaders1: '{{ steps.call-devhub-api.output.headers }}'
+      getHeaders2: '{{ steps.call-external-api.output.headers }}'
