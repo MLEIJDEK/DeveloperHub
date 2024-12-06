@@ -2,7 +2,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: Call RestAPI
+  name: Call-RestAPI
   title: Call RestAPI testing for post/get
   description: Testing get functionality with get
   lifecycle:
