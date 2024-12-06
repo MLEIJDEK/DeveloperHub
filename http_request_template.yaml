@@ -2,18 +2,21 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: HTTP-testing
-  title: Http testing for post/get
+  name: Call RestAPI
+  title: Call RestAPI testing for post/get
   description: Testing get functionality with get
-spec:
+  lifecycle:
+    - development
+  
+  spec:
   owner: michel.leijdekker
   type: service
 
   parameters:
-    - title: Fill in some params
+    - title: Provide API URI to call
       properties:
-        httpGetPath:
-          title: Get Path
+        URI:
+          title: Get URI
           type: string
           description: The path you want to get on your backstage instance
           ui:autofocus: true
@@ -21,16 +24,34 @@ spec:
             rows: 5
 
   steps:
-    - id: backstage_request
-      name: backstage request
+    - id: call-devhub-api
+      name: call devhub api
       action: http:backstage:request
       input:
         method: 'GET'
         path: '/catalog/entities?filter=kind=user&filter=kind=group'
         headers:
           content-type: 'application/json'
- 
+
+  # The import flow debug step, enable it for debugging  
+    - id: log-debug
+      name: Debug Logs
+      action: debug:log
+      input:
+        message: "Fetched the Flogo Skeleton template"
+        listWorkspace: true
+        API_Response: ${{ steps.call-devhub-api.output.body[0] }}
+  
+    - id: call-external-api
+      name: call devhub api
+      action: http:backstage:request
+      input:
+        method: 'GET'
+        path: '/catalog/entities?filter=kind=user&filter=kind=group'
+        headers:
+          content-type: 'application/json'    
+  
   output:
-    getResponse: '{{ steps.backstage_request.output.body }}'
-    getCode: '{{ steps.backstage_request.output.code }}'
-    getHeaders: '{{ steps.backstage_request.output.headers }}'
+      getResponse: '{{ steps.call-devhub-api.output.body }}'
+      getCode: '{{ steps.call-devhub-api.output.code }}'
+      getHeaders: '{{ steps.call-devhub-api.output.headers }}'
