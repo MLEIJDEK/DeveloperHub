@@ -4,7 +4,7 @@ kind: Template
 metadata:
   name: Call-RestAPI-Ext
   title: Call RestAPI testing for external post/get
-  description: Testing functionality
+  description: Testing
   lifecycle:
     - development
   
