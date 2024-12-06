@@ -33,13 +33,13 @@ spec:
         headers:
           content-type: 'application/json'   
 
-    # The import flow debug step, enable it for debugging       
-    - id: log-debug2
+    # The import flow debug step, enable it for debugging        
+    - id: log-debug
       name: Debug Logs
       action: debug:log
       input:
         message: "Fetched catelog entities for user and groups"
-        API_Response: ${{ steps.call_external_api.output.body }}
+        API_ResponseBody: ${{ steps.call_external_api.output.body }}
         API_Code: ${{ steps.call_external_api.output.code }}
 
   output:
