@@ -6,7 +6,7 @@ metadata:
   title: Http testing for post/get
   description: Testing get functionality with get
 spec:
-  owner: roadie
+  owner: michel.leijdekker
   type: service
 
   parameters:
