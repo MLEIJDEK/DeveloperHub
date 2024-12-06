@@ -24,7 +24,7 @@ spec:
             rows: 5
 
   steps:
-    - id: call-external-api
+    - id: call_external_api
       name: call external api
       action: http:backstage:request
       input:
@@ -47,10 +47,10 @@ spec:
       action: debug:log
       input:
         message: "Fetched catelog entities for user and groups"
-        API_Response: ${{ steps.call-external-api.output.body }}
-        API_Code: ${{ steps.call-external-api.output.code }}
+        API_Response: ${{ steps.call_external_api.output.body }}
+        API_Code: ${{ steps.call_external_api.output.code }}
 
   output:
-      getResponse: '{{ steps.call-external-api.output.body }}'
-      getCode: '{{ steps.call-external-api.output.code }}'
-      getHeaders: '{{ steps.call-external-api.output.headers }}'
+      getResponse: '{{ steps.call_external_api.output.body }}'
+      getCode: '{{ steps.call_external_api.output.code }}'
+      getHeaders: '{{ steps.call_external_api.output.headers }}'
