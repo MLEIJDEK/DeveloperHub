@@ -42,7 +42,7 @@ spec:
         API_Response: ${{ steps.call-devhub-api.output.body[1]}}
   
     - id: call-external-api
-      name: call extrenal api
+      name: call external api
       action: http:backstage:request
       input:
         method: 'GET'
