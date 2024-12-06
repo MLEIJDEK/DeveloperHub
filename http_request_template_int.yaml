@@ -9,7 +9,7 @@ metadata:
     - development
   
 spec:
-  owner: michel.leijdekker
+  owner: user:default/michel.leijdekker
   type: service
 
   parameters:
