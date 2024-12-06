@@ -26,7 +26,7 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/catlog/entities?filter=kind=user&filter=kind=group'
+        path: '/catalog/entities?filter=kind=user&filter=kind=group'
         headers:
           content-type: 'application/json'
  
