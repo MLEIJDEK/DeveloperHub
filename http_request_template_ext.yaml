@@ -39,7 +39,7 @@ spec:
       action: debug:log
       input:
         message: "Fetched catelog entities for user and groups"
-        API_Response: ${{ steps.call-external-api.output.body[0] }}
+        API_Response: ${{ steps.call-external-api }}
 
   output:
       getResponse: '{{ steps.call-external-api.output.body }}'
