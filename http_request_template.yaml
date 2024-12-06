@@ -8,7 +8,7 @@ metadata:
   lifecycle:
     - development
   
-  spec:
+spec:
   owner: michel.leijdekker
   type: service
 
