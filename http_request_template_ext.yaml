@@ -3,8 +3,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: Call-RestAPI-Ext
-  title: Call RestAPI testing for post/get
-  description: Testing get functionality with external service
+  title: Call RestAPI testing for external post/get
+  description: Testing functionality
   lifecycle:
     - development
   

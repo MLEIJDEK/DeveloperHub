@@ -3,8 +3,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: Call-RestAPI-Int
-  title: Call RestAPI testing for post/get
-  description: Testing get functionality with get
+  title: Call RestAPI testing for internal call post/get
+  description: Testing
   lifecycle:
     - development
   
