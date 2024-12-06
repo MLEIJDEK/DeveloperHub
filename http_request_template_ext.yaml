@@ -33,6 +33,14 @@ spec:
         headers:
           content-type: 'application/json'   
 
+    
+    - id: wait-5sec
+      action: debug:wait
+      name: Waiting for 5 seconds
+      input:
+       seconds: 5
+
+
     # The import flow debug step, enable it for debugging       
     - id: log-debug2
       name: Debug Logs
